@@ -159,8 +159,6 @@ MonoBehaviour:
   ID: 0
   player: {fileID: 2137698865}
   enemy: {fileID: 917738296}
-  walls: []
-  pSpeed: 0.1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,6 +242,7 @@ GameObject:
   - component: {fileID: 917738295}
   - component: {fileID: 917738294}
   - component: {fileID: 917738296}
+  - component: {fileID: 917738297}
   m_Layer: 0
   m_Name: enemy0
   m_TagString: Untagged
@@ -317,9 +316,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 917738293}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93a088d5e9aeb2c42b860bbc5ba3d485, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ef11e99c8f33c94fbcf51ff0755ea76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDead: 0
+--- !u!58 &917738297
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 917738293}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.26
 --- !u!1 &1977606026
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,6 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1977606027}
   - component: {fileID: 1977606028}
+  - component: {fileID: 1977606030}
   - component: {fileID: 1977606029}
   m_Layer: 0
   m_Name: bullet
@@ -344,7 +360,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1977606026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.43, y: -2.45, z: 0}
+  m_LocalPosition: {x: -2.35, y: -1.93, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 180975909}
@@ -406,6 +422,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415c2d828c9a87e4d9d9cc77272f665d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0.1
+  isActive: 0
+--- !u!70 &1977606030
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1977606026}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.09, y: 0.15}
+  m_Direction: 0
 --- !u!1 &2137698862
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,4 +528,4 @@ MonoBehaviour:
   angle: 0
   speed: 0.05
   rotSpeed: 1.5
-  bullet: {fileID: 0}
+  bullet: {fileID: 1977606029}

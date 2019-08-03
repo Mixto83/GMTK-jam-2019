@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaticEnemy : Enemy {
+public class LinearMovEnemy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -13,9 +13,4 @@ public class StaticEnemy : Enemy {
 	void Update () {
 		
 	}
-
-    public override void respawn()
-    {
-        base.respawn();
-    }
 }

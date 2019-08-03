@@ -14,7 +14,6 @@ public class Level : MonoBehaviour {
 
     #region Properties
 
-    public float pSpeed;
 
     #endregion
 
@@ -26,7 +25,24 @@ public class Level : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (player.bullet.isActive)
+        {
+            checkCollisions();
+        }
 	}
+    #endregion
+
+    #region Methods
+
+    void checkCollisions()
+    {
+        Collider2D bulletCol = player.bullet.GetComponent<Collider2D>();
+        if (bulletCol.bounds.Intersects(enemy.GetComponent<Collider2D>().bounds))
+        {
+            player.bullet.deactivate();
+            enemy.kill();
+        }
+    }
+
     #endregion
 }
