@@ -14,12 +14,8 @@ public class Player : MonoBehaviour {
 
     #endregion
 
-    #region Constructor and Getters
 
-
-    #endregion
-
-    #region Methods
+    #region MonoBehaviour
 
     void Update()
     {
@@ -35,14 +31,28 @@ public class Player : MonoBehaviour {
         if (Input.GetKey(KeyCode.R))
         {
             this.transform.Rotate(new Vector3(0, 0, rotSpeed));
+            angle += rotSpeed;
+            if (angle >= 360)
+            {
+                angle -= 360;
+            }
         }
 
         if (Input.GetKey(KeyCode.T))
         {
             this.transform.Rotate(new Vector3(0, 0, -rotSpeed));
+            angle -= rotSpeed;
+            if (angle < 0)
+            {
+                angle += 360;
+            }
         }
 
         //Shooting
+        if (Input.GetKeyDown(KeyCode.Space) && !bullet.isActive)
+        {
+            bullet.shoot(transform.position, angle);
+        }
     }
 
     #endregion
