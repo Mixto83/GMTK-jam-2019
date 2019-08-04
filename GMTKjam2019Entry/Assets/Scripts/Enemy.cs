@@ -34,6 +34,7 @@ public class Enemy : MonoBehaviour {
     public virtual void respawn()
     {
         gameObject.SetActive(true);
+        isDead = false;
     }
 
     #endregion

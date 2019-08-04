@@ -18,16 +18,9 @@ public class Bullet : MonoBehaviour {
         deactivate();
 	}
 	
-	void Update () {
-        if (isActive)
-        {
-            this.transform.Translate(new Vector3(0.0f, speed, 0.0f));
-        }
+	void Update ()
+    {
 
-        if(transform.position.y >= 6.0f)
-        {
-            deactivate();
-        } 
 	}
 
     #endregion
@@ -38,7 +31,9 @@ public class Bullet : MonoBehaviour {
     {
         isActive = true;
         this.transform.position = new Vector3(pos.x, pos.y, 0.0f);
-        this.transform.eulerAngles = new Vector3(0.0f, 0.0f, angle);
+        //this.transform.eulerAngles = new Vector3(0.0f, 0.0f, angle);
+        GetComponent<Rigidbody2D>().rotation = angle;
+        GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.0f, speed));
     }
 
     public void deactivate()

@@ -29,6 +29,11 @@ public class Level : MonoBehaviour {
         {
             checkCollisions();
         }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            resetLevel();
+        }
 	}
     #endregion
 
@@ -47,6 +52,16 @@ public class Level : MonoBehaviour {
         }
         
     }
+
+    void resetLevel()
+    {
+        foreach(Enemy enemy in enemies)
+        {
+            enemy.respawn();
+        }
+        player.bullet.deactivate();
+    }
+
 
     #endregion
 }
