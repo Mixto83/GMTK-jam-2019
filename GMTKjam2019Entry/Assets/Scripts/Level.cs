@@ -8,7 +8,7 @@ public class Level : MonoBehaviour {
 
     public int ID;
     public Player player;
-    public Enemy enemy;
+    public List<Enemy> enemies;
 
     #endregion
 
@@ -37,11 +37,15 @@ public class Level : MonoBehaviour {
     void checkCollisions()
     {
         Collider2D bulletCol = player.bullet.GetComponent<Collider2D>();
-        if (bulletCol.bounds.Intersects(enemy.GetComponent<Collider2D>().bounds))
+        foreach(Enemy enemy in enemies)
         {
-            player.bullet.deactivate();
-            enemy.kill();
+            if (!enemy.isDead && bulletCol.bounds.Intersects(enemy.GetComponent<Collider2D>().bounds))
+            {
+                player.bullet.deactivate();
+                enemy.kill();
+            }
         }
+        
     }
 
     #endregion
