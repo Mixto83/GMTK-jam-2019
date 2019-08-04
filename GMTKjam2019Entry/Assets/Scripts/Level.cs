@@ -77,7 +77,6 @@ public class Level : MonoBehaviour {
     void nextLevel()
     {
         SceneManager.LoadScene(ID + 1);
-
     }
 
     #endregion
