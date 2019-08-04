@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
     public float rotSpeed = 1.5f;
 
     public Bullet bullet;
+    public LimitArea limit;
 
     #endregion
 
@@ -25,7 +26,12 @@ public class Player : MonoBehaviour {
         float verInput = Input.GetAxis("Vertical");
 
         Vector3 direction = new Vector3(horInput, verInput, 0.0f);
-        this.transform.position += direction * speed;
+        Vector3 nextPos = transform.position + direction * speed;
+        if((nextPos.x < limit.right) && (nextPos.x >limit.left) && (nextPos.y < limit.top) && (nextPos.y > limit.bottom))
+        {
+            transform.position = nextPos;
+        }
+        
 
         //Rotation
         if (Input.GetKey(KeyCode.R))
