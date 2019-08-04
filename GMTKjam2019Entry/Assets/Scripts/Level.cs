@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class Level : MonoBehaviour {
     public int ID;
     public Player player;
     public List<Enemy> enemies;
+    public int nActiveEnemies;
 
     #endregion
 
@@ -20,14 +22,15 @@ public class Level : MonoBehaviour {
     #region MonoBehaviour Functions
     // Use this for initialization
     void Start () {
-		
+        nActiveEnemies = enemies.Count;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (player.bullet.isActive)
+
+        if (nActiveEnemies <= 0)
         {
-            checkCollisions();
+            nextLevel();
         }
 
         Vector3 bulletPos = player.bullet.transform.position;
@@ -35,6 +38,13 @@ public class Level : MonoBehaviour {
         {
             resetLevel();
         }
+
+        if (player.bullet.isActive)
+        {
+            checkCollisions();
+        }
+
+        
 	}
     #endregion
 
@@ -48,6 +58,7 @@ public class Level : MonoBehaviour {
             if (!enemy.isDead && bulletCol.bounds.Intersects(enemy.GetComponent<Collider2D>().bounds))
             {
                 enemy.kill();
+                nActiveEnemies--;
             }
         }
         
@@ -59,9 +70,15 @@ public class Level : MonoBehaviour {
         {
             enemy.respawn();
         }
+        nActiveEnemies = enemies.Count;
         player.bullet.deactivate();
     }
 
+    void nextLevel()
+    {
+        SceneManager.LoadScene(ID + 1);
+
+    }
 
     #endregion
 }
