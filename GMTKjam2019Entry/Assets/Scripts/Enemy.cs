@@ -11,17 +11,6 @@ public class Enemy : MonoBehaviour {
 
     #endregion
 
-    #region MonoBehaviour
-    // Use this for initialization
-    void Start() {
-
-    }
-
-    // Update is called once per frame
-    void Update() {
-
-    }
-    #endregion
 
     #region Methods
 

@@ -16,11 +16,6 @@ public class Bullet : MonoBehaviour {
     void Start () {
         deactivate();
 	}
-	
-	void Update ()
-    {
-
-	}
 
     #endregion
 

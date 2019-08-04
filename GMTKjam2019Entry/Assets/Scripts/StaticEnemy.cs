@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class StaticEnemy : Enemy {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
+    #region Methods
     public override void respawn()
     {
         base.respawn();
     }
+    #endregion
 }
