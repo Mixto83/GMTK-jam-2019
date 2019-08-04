@@ -44,6 +44,11 @@ public class Level : MonoBehaviour {
             checkCollisions();
         }
 
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            resetLevel();
+        }
+
         
 	}
     #endregion

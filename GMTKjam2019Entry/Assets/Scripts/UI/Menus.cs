@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartButton : MonoBehaviour {
+public class Menus : MonoBehaviour {
 
+    public int scene;
 	// Use this for initialization
 	void Start () {
 		
@@ -12,11 +13,14 @@ public class StartButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            nextScene();
+        }
 	}
 
     public void nextScene()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 }
