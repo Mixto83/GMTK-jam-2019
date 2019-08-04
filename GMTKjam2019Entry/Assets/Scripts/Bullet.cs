@@ -8,14 +8,12 @@ public class Bullet : MonoBehaviour {
 
     public float speed = 0.1f;
     public bool isActive = false;
-    public int bounces = 0;
 
     #endregion
 
     #region MonoBehaviour
 
     void Start () {
-        isActive = false;
         deactivate();
 	}
 	
@@ -30,6 +28,7 @@ public class Bullet : MonoBehaviour {
 
     public void shoot(Vector3 pos, float angle)
     {
+        gameObject.SetActive(true);
         isActive = true;
         this.transform.position = new Vector3(pos.x, pos.y, 0.0f);
         GetComponent<Rigidbody2D>().rotation = angle;
@@ -38,14 +37,10 @@ public class Bullet : MonoBehaviour {
 
     public void deactivate()
     {
-        this.transform.position = new Vector3(5000, 5000, 5000);
-        isActive = false;
-        bounces = 0;
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        bounces++;
+        this.transform.position = new Vector3(0, 0, 0);
+        gameObject.SetActive(false);
+        isActive = false;
     }
 
     #endregion

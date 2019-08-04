@@ -9,7 +9,6 @@ public class Level : MonoBehaviour {
     public int ID;
     public Player player;
     public List<Enemy> enemies;
-    public int MAX_BOUNCES = 10;
 
     #endregion
 
@@ -31,7 +30,8 @@ public class Level : MonoBehaviour {
             checkCollisions();
         }
 
-        if (player.bullet.bounces >= MAX_BOUNCES)
+        Vector3 bulletPos = player.bullet.transform.position;
+        if (bulletPos.x > 9 || bulletPos.x < -9 || bulletPos.y > 5 || bulletPos.y < -5)
         {
             resetLevel();
         }

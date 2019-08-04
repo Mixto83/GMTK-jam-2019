@@ -122,7 +122,6 @@ GameObject:
   m_Component:
   - component: {fileID: 180975909}
   - component: {fileID: 180975910}
-  - component: {fileID: 180975911}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -137,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 180975908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.168604, y: -0.4038597, z: -0.048828125}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2137698863}
@@ -168,27 +167,6 @@ MonoBehaviour:
   - {fileID: 644105177}
   - {fileID: 1977160068}
   - {fileID: 566804883}
-  MAX_BOUNCES: 10
---- !u!68 &180975911
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 180975908}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 6.7055674, y: -4.6127696}
-  - {x: -11.064899, y: -4.599247}
-  - {x: -11.079237, y: 5.389069}
-  - {x: 6.7408085, y: 5.3976264}
-  - {x: 6.710657, y: -4.6127696}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,8 +263,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 550188345}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.38, y: -0.63, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.21139622, y: -1.0338597, z: -0.048828125}
   m_LocalScale: {x: 10.085435, y: 1.9844896, z: 1}
   m_Children: []
   m_Father: {fileID: 180975909}
@@ -387,7 +365,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 566804881}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.13, y: 2.78, z: 0.048828125}
+  m_LocalPosition: {x: -2.9613962, y: 2.3761404, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 180975909}
@@ -565,7 +543,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 644105176}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.25, y: 0.87, z: 0.048828125}
+  m_LocalPosition: {x: 3.418604, y: 0.4661403, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 180975909}
@@ -641,7 +619,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 917738293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.3414173, y: 0.85837024, z: 0.048828125}
+  m_LocalPosition: {x: -0.17281342, y: 0.45451054, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 180975909}
@@ -771,7 +749,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1977160067}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.58, y: 0.93, z: 0.048828125}
+  m_LocalPosition: {x: -3.411396, y: 0.52614033, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 180975909}
@@ -802,8 +780,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1977606026}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.35, y: -1.93, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.24, y: -2.15, z: -0.048828125}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 180975909}
@@ -867,7 +845,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 800
   isActive: 0
-  bounces: 0
 --- !u!50 &1977606031
 Rigidbody2D:
   serializedVersion: 4
@@ -926,8 +903,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2137698862}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.41, y: -3.19, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.24139619, y: -3.5938597, z: -0.048828125}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 180975909}
