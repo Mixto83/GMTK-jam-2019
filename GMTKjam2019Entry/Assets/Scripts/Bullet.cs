@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour {
 
     public float speed = 0.1f;
     public bool isActive = false;
+    public int bounces = 0;
 
     #endregion
 
@@ -31,7 +32,6 @@ public class Bullet : MonoBehaviour {
     {
         isActive = true;
         this.transform.position = new Vector3(pos.x, pos.y, 0.0f);
-        //this.transform.eulerAngles = new Vector3(0.0f, 0.0f, angle);
         GetComponent<Rigidbody2D>().rotation = angle;
         GetComponent<Rigidbody2D>().AddRelativeForce(new Vector2(0.0f, speed));
     }
@@ -40,6 +40,12 @@ public class Bullet : MonoBehaviour {
     {
         this.transform.position = new Vector3(5000, 5000, 5000);
         isActive = false;
+        bounces = 0;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        bounces++;
     }
 
     #endregion

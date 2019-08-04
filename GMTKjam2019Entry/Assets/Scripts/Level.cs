@@ -9,6 +9,7 @@ public class Level : MonoBehaviour {
     public int ID;
     public Player player;
     public List<Enemy> enemies;
+    public int MAX_BOUNCES = 10;
 
     #endregion
 
@@ -30,7 +31,7 @@ public class Level : MonoBehaviour {
             checkCollisions();
         }
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (player.bullet.bounces >= MAX_BOUNCES)
         {
             resetLevel();
         }
@@ -46,7 +47,6 @@ public class Level : MonoBehaviour {
         {
             if (!enemy.isDead && bulletCol.bounds.Intersects(enemy.GetComponent<Collider2D>().bounds))
             {
-                player.bullet.deactivate();
                 enemy.kill();
             }
         }
