@@ -8,7 +8,7 @@ public class LinearMovEnemy : Enemy {
 
     Vector3 pos0;
     public Vector3 direction;
-    public float speed;
+    public float speed = 0.08f;
     public float maxDistance;
 
     #endregion
